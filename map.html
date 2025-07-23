@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Map with Address Search</title>
+  <meta charset="utf-8" />
+  <style>
+    html, body { height: 100%; margin: 0; }
+    #map { height: 90%; }
+    #controls {
+      height: 10%;
+      padding: 5px;
+      background: #f8f8f8;
+    }
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+  <div id="controls">
+    <input type="text" id="addressInput" placeholder="Search address (pickup or dropoff)" size="50" />
+    <button onclick="searchAddress()">Search</button>
+  </div>
+  <div id="map"></div>
+
+  <script>
+    let map = L.map('map').setView([-33.9249, 18.4241], 12); // Cape Town
+    let pickupMarker = null;
+    let dropoffMarker = null;
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19
+    }).addTo(map);
+
+    // === 1. FORWARD GEOCODING ===
+    function searchAddress() {
+      let query = document.getElementById('addressInput').value;
+      fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}`)
+        .then(res => res.json())
+        .then(data => {
+          if (data.length > 0) {
+            const lat = parseFloat(data[0].lat);
+            const lon = parseFloat(data[0].lon);
+            const displayName = data[0].display_name;
+
+            map.setView([lat, lon], 15);
+            addMarker(lat, lon, displayName);
+            window.external.notify(`SEARCH|${lat}|${lon}|${displayName}`);
+          } else {
+            alert("Address not found.");
+          }
+        });
+    }
+
+    // === 3. OPTIONAL: ROUTE DISPLAY FUNCTION ===
+    function showRoute(pickupLat, pickupLng, dropoffLat, dropoffLng) {
+      if (pickupMarker) map.removeLayer(pickupMarker);
+      if (dropoffMarker) map.removeLayer(dropoffMarker);
+
+      pickupMarker = L.marker([pickupLat, pickupLng]).addTo(map).bindPopup("Pickup");
+      dropoffMarker = L.marker([dropoffLat, dropoffLng]).addTo(map).bindPopup("Dropoff");
+      L.polyline([[pickupLat, pickupLng], [dropoffLat, dropoffLng]], { color: 'blue' }).addTo(map);
+    }
+
+  </script>
+</body>
+</html>

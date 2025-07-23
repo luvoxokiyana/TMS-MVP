@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2025/07/13 11:21:59.000.309,=C:\Users\luvox\OneDrive\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2025/07/13 11:31:57.000.874,=C:\Users\luvox\OneDrive\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2025/07/13 11:34:13.000.740,C:\Users\luvox\OneDrive\Documents\MVP\uLogin.dfm=C:\Users\luvox\OneDrive\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2025/07/13 11:34:13.000.740,C:\Users\luvox\OneDrive\Documents\MVP\uLogin.pas=C:\Users\luvox\OneDrive\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2025/07/13 11:34:22.000.976,C:\Users\luvox\OneDrive\Documents\MVP\uDataModule.pas=C:\Users\luvox\OneDrive\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2025/07/13 11:34:22.000.976,C:\Users\luvox\OneDrive\Documents\MVP\uDataModule.dfm=C:\Users\luvox\OneDrive\Documents\Embarcadero\Studio\Projects\Unit2.dfm</Transaction>
+    <Transaction>2025/07/13 11:34:46.000.509,C:\Users\luvox\OneDrive\Documents\MVP\uHaulWiseMVP.dproj=C:\Users\luvox\OneDrive\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2025/07/13 11:39:30.000.295,=C:\Users\luvox\OneDrive\Documents\MVP\Unit2.pas</Transaction>
+    <Transaction>2025/07/13 12:26:11.000.754,C:\Users\luvox\OneDrive\Documents\MVP\uMain.dfm=C:\Users\luvox\OneDrive\Documents\MVP\Unit2.dfm</Transaction>
+    <Transaction>2025/07/13 12:26:11.000.581,C:\Users\luvox\OneDrive\Documents\MVP\uMain.pas=C:\Users\luvox\OneDrive\Documents\MVP\Unit2.pas</Transaction>
+  </Transactions>
+</BorlandProject>
